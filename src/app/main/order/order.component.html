@@ -1,0 +1,66 @@
+<div class="content-center">
+  　<div class="div-center">    
+      <div class="form">
+          <form>
+              產品名稱  <input type="text" name="product-name" [(ngModel)]="product.name" #name ><br>
+              產品價格  <input type="number" name="product-price" [(ngModel)]="product.price" #price ><br>
+              購買數量  <input type="number" name="product-amount" [(ngModel)]="product.amount" #amount ><br>
+          </form>
+          <button class="add" [disabled]=" !name.value || !price.value || !amount.value" (click)="addProduct()">
+            加入購物車
+            <p>$ NTD {{ price.value * amount.value | currency:' ':false}} </p> 
+          </button>
+      </div>
+        
+      <div class="current" [ngClass]="{'show': name.value && price.value && amount.value }">
+        <hr>
+        <p>
+        <b>{{name.value}}</b> 
+        $ NTD {{ price.value * amount.value | currency:' ':false}} </p>
+      </div>
+    </div>
+</div>
+
+<div class="content-center">
+  <div class="div-center no-border">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>產品名稱</th>
+          <th>產品價格</th>
+          <th>購買數量</th>
+          <th>小計</th>
+          <th>刪除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of order.products;let i=index">
+          <td>{{ i+1 }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price }}</td>
+          <td style="cursor: pointer">
+            <!-- 修改 -->
+            <div class="hidden" [hidden]="!p.change">
+              <input type="number" class="change" value={{p.amount}} #newAmount>
+              <button class="close update" (click)="onChange(i,newAmount.value)">修改</button>
+              <button class="close cancel" (click)="p.change=!p.change">取消</button>
+            </div>
+            <!-- 僅顯示 -->
+            <b [hidden]="p.change" (click)="p.change=!p.change">{{ p.amount }}</b>
+          </td>
+          <td>$ {{ p.price * p.amount}}</td>
+          <td><button class="close" (click)="del(i)">X</button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"></td>
+          <td>總計</td>
+          <td>$ {{ order.total }}</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+</div>
+</div>

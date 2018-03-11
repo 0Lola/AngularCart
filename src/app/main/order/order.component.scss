@@ -1,0 +1,103 @@
+$topic-color:#96a7cc;
+$sub-color: #cad3e7;
+$white-color : #ffffff;
+$font-color : #636363;
+$green : #7CB342;
+$green-sub: #C5E1A5;
+
+.form{
+    text-align:center;width:90%;display: -webkit-inline-box;
+}
+.current{
+    text-align:left;width:90%;display: none;
+}
+
+form{
+    line-height: 50px;font-size:  15px;letter-spacing:  4px;color: $font-color ;
+}
+
+.add{
+    text-align:center;width: 250px;height: 127px;margin: 6% 15%;background: $topic-color;border: 3px solid $sub-color;color: $white-color;font-size:  16px;letter-spacing:  4px;font-weight: bold;cursor: pointer;
+}
+.add:disabled {
+    background: #b8b8b8;
+    cursor:not-allowed;
+    border-color:#999;
+}
+
+.close{
+    text-align:center;background: $topic-color;border: 3px solid $sub-color;color: $white-color;font-size: 12px;font-weight: bold;cursor: pointer;border-radius: 5px;
+}
+
+.update{
+    background:$green;
+    border-color:$green-sub;
+}
+.cancel{
+    background:#939393;
+    border-color:#b8b8b8;
+}
+
+b{
+    color:$topic-color;
+    padding:5%;
+}
+.show{
+    display:inline-block 
+}
+.hidden{
+    display: none;
+}
+.content-center{
+    text-align:center;width:100%;
+}
+
+.div-center{
+    background-color: #fafafa;width: 50%;height: 100%;margin:0 auto;border-radius: 3px;border: 0.7px solid #aaaaaa;padding: 1%;
+}
+.div-center.no-border{
+    background-color:#fff;
+    border:none;
+}
+
+table{
+    margin-top:5%;
+    width:100%;color:$topic-color;
+    border-collapse: collapse;
+}
+
+th{
+    border-bottom: 1px solid $sub-color;
+    line-height: 35px;
+}
+
+td{
+    border-bottom: 1px solid $sub-color;
+    line-height: 35px;
+    color:$font-color;
+}
+tr:nth-child(2n){
+    background:#eff3fc;
+}
+
+
+input {
+    border: 0.7px solid $font-color;
+    border-radius: 4px;
+    line-height: 20px;
+    padding-left: 5px;
+    color:$font-color;
+}
+input:focus{
+    outline: none;
+    border:1px solid $topic-color;
+    box-shadow: 0px 0px 4px $sub-color;
+}
+
+.change{
+    // display: none;
+    width:45px;
+}
+hr{
+    border-color:$topic-color;  
+}
