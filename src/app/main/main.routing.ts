@@ -4,8 +4,8 @@ import { MainComponent } from './main.component';
 import { OrderComponent } from './order/order.component';
 
 const MainRoutes: Routes = [
-  { path: '', component: MainComponent, pathMatch:'full'},
-  { path: '', component: OrderComponent, pathMatch:'full'}
+  { path: '', component: MainComponent, pathMatch: 'full'},
+  { path: '', component: OrderComponent, pathMatch: 'full'}
 
 ];
 

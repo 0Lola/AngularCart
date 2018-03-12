@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MainComponent implements OnInit {
-  
-  user : string = "Lola";
-  
+
+  user = 'Lola';
+
   constructor() { }
 
   ngOnInit() {
-  
+
   }
 
 }
