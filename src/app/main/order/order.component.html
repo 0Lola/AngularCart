@@ -1,5 +1,5 @@
 <div class="content-center">
-  　<div class="div-center">    
+  　<div class="div-center">
       <div class="form">
           <form>
               產品名稱  <input type="text" name="product-name" [(ngModel)]="product.name" #name ><br>
@@ -8,14 +8,14 @@
           </form>
           <button class="add" [disabled]=" !name.value || !price.value || !amount.value" (click)="addProduct()">
             加入購物車
-            <p>$ NTD {{ price.value * amount.value | currency:' ':false}} </p> 
+            <p>$ NTD {{ price.value * amount.value | currency:' ':false}} </p>
           </button>
       </div>
-        
+
       <div class="current" [ngClass]="{'show': name.value && price.value && amount.value }">
         <hr>
         <p>
-        <b>{{name.value}}</b> 
+        <b>{{name.value}}</b>
         $ NTD {{ price.value * amount.value | currency:' ':false}} </p>
       </div>
     </div>
@@ -41,13 +41,13 @@
           <td>{{ p.price }}</td>
           <td style="cursor: pointer">
             <!-- 修改 -->
-            <div class="hidden" [hidden]="!p.change">
+            <div [class.hidden]="!p.change">
               <input type="number" class="change" value={{p.amount}} #newAmount>
               <button class="close update" (click)="onChange(i,newAmount.value)">修改</button>
               <button class="close cancel" (click)="p.change=!p.change">取消</button>
             </div>
             <!-- 僅顯示 -->
-            <b [hidden]="p.change" (click)="p.change=!p.change">{{ p.amount }}</b>
+            <b [class.hidden]="p.change" (click)="p.change=!p.change">{{ p.amount }}</b>
           </td>
           <td>$ {{ p.price * p.amount}}</td>
           <td><button class="close" (click)="del(i)">X</button></td>
